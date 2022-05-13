@@ -1,0 +1,12 @@
+{# This is used by the contact page and the base email template #}
+{% if config.address|trim != "" %}
+	<p>
+		{{ config.address|nl2br }}
+	</p>
+{% endif %}
+<p>
+	{% if config.phone|trim != "" %}
+		Phone: <a href="tel:{{ config.getPhoneDigits() }}">{{ config.phone }}</a><br />
+	{% endif %}
+	Email: <a href="mailto:{{config.email }}">{{ config.email }}</a>
+</p>

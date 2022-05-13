@@ -1,0 +1,46 @@
+@import "styles/variables";
+@import "styles/functions";
+
+body
+{
+	background-color: #e8e8e8;
+	color: $DARK_COLOUR;
+	font-family: sans-serif;
+	font-size: $BASE_FONT_SIZE;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+a
+{
+	color: $PRIMARY_HIGHLIGHT;
+	text-decoration: none;
+}
+
+.body
+{
+	padding: 20px;
+}
+
+.wrapper
+{
+	display: inline-block;
+	margin-top: 20px;
+	max-width: 600px;
+	text-align: left;
+	width: 100%;
+}
+
+.wrapped-block
+{
+	background-color: $LIGHT_COLOUR;
+	padding: 20px;
+}
+
+.footer
+{
+	font-size: rem(12px);
+	margin-top: 20px;
+}

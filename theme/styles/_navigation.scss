@@ -1,0 +1,478 @@
+@include above($NAV_BREAKPOINT - 1px)
+{
+	.main-navigation
+	{
+		position: relative;
+		z-index: 7; // The top level menu doesn't need this, but the dropdown submenus need to hover over almost everything else on the page
+		
+		// Top Level Menu
+		> ul
+		{
+			display: flex;
+			gap: 45px;
+			justify-content: space-between;
+			padding: 0;
+			
+			// Base styles for top level menu items
+			> li
+			{
+				display: flex;
+				position: relative;
+				
+				> a
+				{
+					align-items: center;
+					display: flex;
+					min-height: 0; // Set this height to enforce a minimum height on the entire menu
+					padding: 5px;
+					text-decoration: none;
+				}
+			}
+			
+			// Menu item for current page
+			> li.sel > a
+			{
+				background: $PRIMARY_HIGHLIGHT;
+				color: $LIGHT_COLOUR;
+			}
+			
+			// Hover styles
+			> li
+			{
+				@include hover
+				{
+					> a
+					{
+						box-shadow: 0 1px $PRIMARY_HIGHLIGHT;
+					}
+				}
+			}
+		}
+		
+		// Dropdown Menus
+		li ul
+		{
+			background: $LIGHT_COLOUR;
+			box-shadow: 0 2px 1px rgba($DARK_COLOUR, 0.1);
+			left: 0;
+			position: absolute;
+			min-width: 100%;
+			opacity: 0;
+			padding: 0;
+			top: 100%;
+			transition-property: opacity, visibility;
+			transition-duration: 0.2s;
+			visibility: hidden;
+			white-space: nowrap;
+			
+			// Base styles for dropdown menu items
+			> li
+			{
+				display: block;
+				
+				> a
+				{
+					display: block;
+					padding: 2px 5px;
+					text-decoration: none;
+				}
+			}
+			
+			// Menu item for current page
+			> li.sel > a
+			{
+				background: $PRIMARY_HIGHLIGHT;
+				color: $LIGHT_COLOUR;
+			}
+			
+			// Hover styles
+			> li
+			{
+				@include hover
+				{
+					> a
+					{
+						background: mix($PRIMARY_HIGHLIGHT, $LIGHT_COLOUR);
+					}
+				}
+			}
+		}
+		
+		// Displays submenus on hover
+		li:hover > ul,
+		li:focus-within > ul,
+		a:focus + ul
+		{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+@include below($NAV_BREAKPOINT)
+{
+	.main-navigation-wrapper
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.main-navigation
+	{
+		display: none;
+		position: absolute;
+		width: 100%;
+		background: $SECONDARY_HIGHLIGHT;
+		
+		&.open
+		{
+			display: block;
+		}
+
+		> ul
+		{
+			z-index: 10000;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+
+		li
+		{
+			display: block;
+			position: relative;
+			border-top: 1px solid mix($PRIMARY_HIGHLIGHT, $SECONDARY_HIGHLIGHT);
+			width: 100%;
+			text-align: left;
+
+			@include hover
+			{
+				background-color: $PRIMARY_HIGHLIGHT;
+			}
+
+			&.sel
+			{
+				background-color: $PRIMARY_HIGHLIGHT;
+			}
+
+			a
+			{
+				display: block;
+				padding: 10px 1em;
+				color: $LIGHT_COLOUR;
+				text-align: left;
+				text-decoration: none;
+			}
+		}
+
+		li ul
+		{
+			display: none;
+			position: relative;
+			top: auto;
+			left: auto;
+			height: auto;
+			margin-left: 0;
+			padding-left: 0;
+			width: 100%;
+
+			li
+			{
+				width: 100%;
+				background-color: mix($PRIMARY_HIGHLIGHT, $SECONDARY_HIGHLIGHT, 15%);
+
+				a
+				{
+					padding-left: 2.5em;
+				}
+			}
+		}
+
+		//responsive styles
+		li.open
+		{
+			> .open-sub:after
+			{
+				transform: rotate(360deg);
+			}
+			> .open-sub:before
+			{
+				transform: rotate(180deg);
+			}
+
+			> ul
+			{
+				display: block;
+			}
+		}
+		
+		// nav items to the far right of the nav open into the window (content area) rather than out of it.
+		> ul > li:last-child > ul
+		{
+			left: auto;
+			right: 0;
+			
+			ul
+			{
+				left: auto;
+				right: 100%;
+			}
+		}
+	}
+
+	//burger
+	.open-nav
+	{
+		display: block;
+		position: absolute;
+		top: -50px;
+		right: 10px;
+		height: 26px;
+		width: 34px;
+		cursor: pointer;
+
+		.bar
+		{
+			display: block;
+			position: absolute;
+			height: 4px;
+			width: 100%;
+			background: $DARK_COLOUR;
+			transition: all 0.2s;
+
+			&.top
+			{
+				top: 0;
+			}
+
+			&.middle
+			{
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+
+			&.bottom
+			{
+				bottom: 0;
+			}
+		}
+
+		&.open .bar
+		{
+			top: 0;
+			bottom: 0;
+			margin: auto;
+
+			&.top,
+			&.middle
+			{
+				transform: rotate(135deg);
+			}
+
+			&.bottom
+			{
+				transform: rotate(-135deg);
+			}
+		}
+	}
+
+	//parents
+	.open-sub
+	{
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 40px;
+		width: 40px;
+		cursor: pointer;
+
+		&:before,
+		&:after
+		{
+			@extend %absolute-pseudo-block;
+
+			display: block;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 4px;
+			margin: auto;
+			width: 50%;
+			background: $LIGHT_COLOUR;
+			transition: all 0.2s;
+		}
+
+		&:after
+		{
+			transform: rotate(90deg);
+		}
+	}
+}
+
+
+li.account-nav
+{
+	@include below($TABLET_MIN + 1px)
+	{
+		position: static !important;//so that the dropdown can be the full width of the screen
+	}
+
+	&.do-form
+	{
+		&:hover ul
+		{
+			display: none;
+		}
+		&.open
+		{
+			background: $SECONDARY_HIGHLIGHT;
+
+			ul
+			{
+				display: block;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+	&:not(.do-form)
+	{
+		&:hover ul,
+		a:focus ~ ul
+		{
+			display: block;
+		}
+	}
+	&.logged-in > ul
+	{
+		//logout link is on the account page for mobile
+		@include responsive
+		{
+			display: none !important;
+		}
+	}
+
+	> a
+	{
+		background: url('/theme/images/icons/user.png') 8px center no-repeat;
+	}
+
+	ul
+	{
+		display: none;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: auto;
+		z-index: 10;
+		margin: 0;
+		padding: 0;
+		background: $SECONDARY_HIGHLIGHT;
+
+		@include responsive
+		{
+			width: 100%;
+		}
+
+		li
+		{
+			width: 100%;
+		}
+	}
+
+	form
+	{
+		margin-top: 0;
+		min-width: 290px;
+		padding: 20px;
+		background: $SECONDARY_HIGHLIGHT;
+
+		input[type="text"],
+		input[type="password"]
+		{
+			padding: 7px;
+			font-size: rem(15px);
+
+			@include responsive
+			{
+				padding: 14px;
+			}
+		}
+
+		.actions
+		{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0;
+
+			@include responsive
+			{
+				display: block;
+			}
+		}
+
+		.button
+		{
+			border-radius: 0;
+			padding: 10px 20px;
+			margin: 0;
+			min-width: 0;
+			background: $DARK_COLOUR;
+			font-size: rem(15px);
+			text-transform: none;
+		}
+	}
+
+	.reset-link
+	{
+		padding: 0;
+		background: none;
+		font-family: $CONTENT_FONT;
+		font-size: rem(12px);
+		text-align: right;
+
+		@include responsive
+		{
+			display: inline-block;
+			margin-top: 10px;
+			text-align: left;
+		}
+
+		&:hover
+		{
+			color: $LIGHT_COLOUR;
+		}
+	}
+}
+//end account-nav
+
+.cart-link > a .icon
+{
+	display: inline-block;
+	position: relative;
+	height: 17px;
+	margin-right: 15px;
+	width: 17px;
+	background: url('/theme/images/icons/cart.png') center no-repeat;
+
+	.number
+	{
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		top: -10px;
+		right: -14px;
+		border-radius: 50%;
+		height: 18px;
+		width: 18px;
+		background: $DARK_COLOUR;
+		color: $LIGHT_COLOUR;
+	}
+}

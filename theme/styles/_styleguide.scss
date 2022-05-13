@@ -1,0 +1,339 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/theme/fonts/Inter-Medium.eot');
+    src: url('/theme/fonts/Inter-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/theme/fonts/Inter-Medium.woff2') format('woff2'),
+        url('/theme/fonts/Inter-Medium.woff') format('woff'),
+        url('/theme/fonts/Inter-Medium.ttf') format('truetype'),
+        url('/theme/fonts/Inter-Medium.svg#Inter-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/theme/fonts/Inter-Bold.eot');
+    src: url('/theme/fonts/Inter-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/theme/fonts/Inter-Bold.woff2') format('woff2'),
+        url('/theme/fonts/Inter-Bold.woff') format('woff'),
+        url('/theme/fonts/Inter-Bold.ttf') format('truetype'),
+        url('/theme/fonts/Inter-Bold.svg#Inter-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/theme/fonts/Inter-Light.eot');
+    src: url('/theme/fonts/Inter-Light.eot?#iefix') format('embedded-opentype'),
+        url('/theme/fonts/Inter-Light.woff2') format('woff2'),
+        url('/theme/fonts/Inter-Light.woff') format('woff'),
+        url('/theme/fonts/Inter-Light.ttf') format('truetype'),
+        url('/theme/fonts/Inter-Light.svg#Inter-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/theme/fonts/Inter-Regular.eot');
+    src: url('/theme/fonts/Inter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/theme/fonts/Inter-Regular.woff2') format('woff2'),
+        url('/theme/fonts/Inter-Regular.woff') format('woff'),
+        url('/theme/fonts/Inter-Regular.ttf') format('truetype'),
+        url('/theme/fonts/Inter-Regular.svg#Inter-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/theme/fonts/Inter-SemiBold.eot');
+    src: url('/theme/fonts/Inter-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('/theme/fonts/Inter-SemiBold.woff2') format('woff2'),
+        url('/theme/fonts/Inter-SemiBold.woff') format('woff'),
+        url('/theme/fonts/Inter-SemiBold.ttf') format('truetype'),
+        url('/theme/fonts/Inter-SemiBold.svg#Inter-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/theme/fonts/Montserrat-Light.eot');
+    src: url('/theme/fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+        url('/theme/fonts/Montserrat-Light.woff2') format('woff2'),
+        url('/theme/fonts/Montserrat-Light.woff') format('woff'),
+        url('/theme/fonts/Montserrat-Light.ttf') format('truetype'),
+        url('/theme/fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+$font-family__primary: "Inter";
+$font-family__secondary: "Montserrat";
+
+//
+//  Mixin
+//  _____________________________________________
+
+@mixin lib-css($atribute, $params) {
+    #{$atribute}: #{$params};
+    -webkit-#{$atribute}: #{$params};
+    -khtml-#{$atribute}: #{$params};
+    -moz-#{$atribute}: #{$params};
+    -ms-#{$atribute}: #{$params};
+    -o-#{$atribute}: #{$params};
+}
+
+
+//
+//  Color
+//  _____________________________________________
+
+$color-black: #000;
+$color-white: #fff;
+$color-black_dark: #333;
+
+$color-gray55: #8c8c8c;
+
+$theme__color__primary: #000;
+$theme__color__secondary: #d4af37;
+
+// button
+$button-primary__color: $color-white;
+$button-primary__background: $theme__color__secondary;
+$button-secondary__color: $color-black;
+$button-secondary__background: $color-white;
+
+//
+//  Typography
+//  _____________________________________________
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter";
+    font-size: 19px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 45px;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+a {
+    color: $color-white;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+a:hover,
+a:active,
+a:focus {
+    outline: 0;
+}
+
+p:last-child,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family__primary;
+    clear: both;
+    margin: 0;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+form:where(:not(.custom-form)) input[type=text],
+form:where(:not(.custom-form)) input[type=password],
+form:where(:not(.custom-form)) input[type=number],
+form:where(:not(.custom-form)) input[type=email],
+form:where(:not(.custom-form)) input[type=tel],
+form:where(:not(.custom-form)) input[type=date],
+form:where(:not(.custom-form)) input[type=datetime-local],
+form:where(:not(.custom-form)) input[type=month],
+form:where(:not(.custom-form)) input[type=search],
+form:where(:not(.custom-form)) input[type=time],
+form:where(:not(.custom-form)) input[type=url],
+textarea {
+    border-radius: 2px;
+    border: 1px solid $color-gray55;
+    color: $theme__color__primary;
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    outline: none;
+    padding: 10px 20px 11px;
+}
+
+.input-radio {
+    @include lib-css(display, flex);
+    align-content: center;
+    align-items: center;
+}
+
+input[type="radio"] {
+    @include lib-css(appearance, none);
+    height: 20px;
+    position: relative;
+    width: 20px;
+    margin: 0;
+}
+
+input[type="radio"]::after {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid $color-black;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+input[type="radio"]::before {
+    background-color: #d4af37;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 0;
+    margin: 5px 0 0 5px;
+    position: absolute;
+    top: 0;
+    width: 10px;
+    visibility: hidden;
+}
+
+input[type="radio"] + label {
+    color: $color-black;
+    font-family: $font-family__primary;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-left: 15px;
+}
+
+input[type="radio"]:checked::before {
+    visibility: visible;
+}
+
+// button-style
+.btn {
+    border-radius: 27px;
+    border: 0;
+    color: $color-white;
+    display: block;
+    font-family: $font-family__primary;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    outline: 0;
+    padding: 17px 20px;
+    text-transform: capitalize;
+    width: max-content;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    text-decoration-line: none;
+}
+
+.primary {
+    background: $button-primary__background;
+    color: $button-primary__color;
+}
+
+.secondary {
+    background: $button-secondary__background;
+    color: $button-secondary__color;
+}
+
+.btn.primary:hover,
+.btn.primary:active,
+.btn.primary:focus {
+    outline: 0;
+    background: rgba(212, 175, 55, 0.75);
+}
+
+.btn.secondary:hover,
+.btn.secondary:active,
+.btn.secondary:focus {
+    outline: 0;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+// input-style
+
+

@@ -1,0 +1,16 @@
+{#
+	Displays a date picker
+	- Required:
+		- label: A label for the date picker
+	- Optional:
+		- wrapperClasses: Classes to apply to the wrapper's element
+		- error: An error to display
+		- name: The name to give to the element
+		- value: The default value for the date picker
+		- required: Whether the input is required
+		- classes: Classes to apply to the input
+		- attributes: Extra attributes to apply to the input
+	
+	Note: Date inputs do not support the placeholder attribute, so we're always using labelled inputs
+#}
+{% include "forms/base/labelled-input.twig" with {"type": "date"} %}

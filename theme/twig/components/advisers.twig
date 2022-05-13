@@ -1,0 +1,10 @@
+<div class="advisers-container">
+    <p>Our Mortgage Advisers work with the leading New Zealand home loan providers...</p>
+    <ul>
+        {% for adviser in config.advisers %}
+        <li>
+            <img src="{{adviser.image.getLink()}}" alt="{{adviser.label}}">
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,183 @@
+/***** main slideshow (as header or banner) *****/
+
+.slideshow
+{
+	// container
+
+	// MAIN SLIDESHOW
+	//// note: arrows and dots turned on/off in javascript
+
+	/// desktop sizing
+	/// scss to calculate the aspect ratio from the dimensions as defined in the Banner classes (width / height)
+	/// this scales the slide no matter the screen width
+	/// a max-height can be used on .slide to override this for really wide screens.
+	$height: calc(100% * #{380 / 2560});
+	$main-height: calc(100% * #{380 / 2560});
+
+	/// mobile sizing (fixed height)
+	$responsive-height: 340px;
+
+	overflow: hidden;
+	position: relative;
+
+	/// mobile-first
+	background: $LIGHT_COLOUR;
+
+	// slides
+	//// slide elements
+	.slide
+	{
+		overflow: hidden;
+		position: relative;
+		background-color: $LIGHT_COLOUR;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+
+		img
+		{
+			height: auto;
+			width: 100%;
+		}
+
+		.background-image
+		{
+			width: 100%;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			&:after
+			{
+				content: '';
+				display: block;
+				position: relative;
+				padding-top: $responsive-height;
+
+				@include above($SLIDESHOW)
+				{
+					padding-top: $height;
+				}
+
+				html.Front-Page &
+				{
+					@include above($SLIDESHOW)
+					{
+						padding-top: $main-height;
+					}
+				}
+			}
+		}
+
+		.small-screen
+		{
+			@include above($SLIDESHOW)
+			{
+				display: none;
+			}
+		}
+
+		.small-screen + .big-screen
+		{
+			display: none;
+
+			@include above($SLIDESHOW)
+			{
+				display: block;
+			}
+		}
+
+		.caption
+		{
+			display: flex;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 5;
+			//noinspection CssOptimizeSimilarProperties
+			background-position: center top;
+			//noinspection CssOptimizeSimilarProperties
+			background-repeat: no-repeat;
+			color: $DARK_COLOUR;
+			text-align: left;
+			text-transform: none;
+			transition: all 0.2s;
+
+			@include above($SLIDESHOW)
+			{
+				align-items: center;
+			}
+
+			@include above($CONTENT_WIDTH)
+			{
+				right: 0;
+				left: 0;
+			}
+
+			h2
+			{
+				margin: 0;
+				color: $LIGHT_COLOUR;
+				font-size: rem(36px);
+				font-family: $CONTENT_FONT;
+
+				@include above($CONTENT_WIDTH)
+				{
+					font-size: rem(60px);
+				}
+			}
+		}
+	}
+}
+
+/***** global navigation styles for slideshows *****/
+/* (all the structure you should need to customise Foxy arrows and bullets) */
+.foxy
+{
+	.foxy-arrows
+	{
+		
+	}
+
+	.foxy-arrow
+	{
+		@include hover
+		{
+			&::after
+			{
+			
+			}
+		}
+		
+		&::after
+		{
+			border-color: $PRIMARY_HIGHLIGHT;
+		}
+	}
+	
+	.foxy-bullets
+	{
+		.foxy-bullet-item
+		{
+			.foxy-bullet
+			{
+				@include hover
+				{
+				
+				}
+			}
+			
+			&.foxy-active
+			{
+				.foxy-bullet
+				{
+					background: $PRIMARY_HIGHLIGHT;
+				}
+			}
+		}
+	}
+}

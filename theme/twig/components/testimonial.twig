@@ -1,0 +1,21 @@
+<div class="module-content testimonials">
+    <div class="testimonial">
+        <div class="testimonial__left">
+            <div class="testimonial__list">
+                {% for testimonial in controller.callStatic('Testimonial', 'loadAllActive') %}
+                    <div class="testimonial__item">
+                        <p class="testimony">"{{ testimonial.testimony|nl2br }}"</p>
+                        <p class="witness">{{ testimonial.witness }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="testimonial__right">
+            <div class="testimonial__image--list">
+                {% for testimonial in controller.callStatic('Testimonial', 'loadAllActive') %}
+                <img src="{{testimonial.image.getLink()}}" alt="{{ testimonial.witness }}">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

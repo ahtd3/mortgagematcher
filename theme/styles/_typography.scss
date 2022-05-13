@@ -1,0 +1,71 @@
+// These are the base font styles for the site, as well as general typographic elements such as headings and links. Element specific typography should be defined with the rest of the styles for that element, so the styles don't end up being split across multiple files
+
+:root
+{
+	--heading-colour: #{$PRIMARY_HIGHLIGHT};
+	--link-colour: #{$PRIMARY_HIGHLIGHT};
+}
+
+html
+{
+	font-size: $BASE_FONT_SIZE;
+}
+
+body
+{
+	color: $DARK_COLOUR;
+	font-family: $CONTENT_FONT;
+	line-height: 1.5;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+@include headings
+{
+	margin: 0 0 0.5em;
+	color: var(--heading-colour);
+	font-family: $HEADING_FONT;
+	font-size: var(--heading-responsive-size, initial);
+	line-height: 1.2;
+	transition: all 0.2s;
+	
+	@include above($LAPTOP_MEDIUM)
+	{
+		font-size: var(--heading-size, initial);
+	}
+}
+
+h1
+{
+	--heading-size: #{rem(60px)};
+	--heading-responsive-size: #{rem(32px)};
+}
+
+h2
+{
+	--heading-size: #{rem(32px)};
+	--heading-responsive-size: #{rem(24px)};
+}
+
+h3
+{
+	--heading-size: #{rem(24px)};
+	--heading-responsive-size: #{rem(20px)};
+}
+
+a
+{
+	color: var(--link-colour);
+	text-decoration: none;
+	transition: all 0.2s;
+
+	@include hover
+	{
+		text-decoration: underline;
+	}
+
+	img
+	{
+		border: none;
+	}
+}

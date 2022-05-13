@@ -1,0 +1,76 @@
+// getting fonts here means they are picked up by the editor in the admin panel
+// they are also set in the <head> of the site template to reduce content flash
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+
+// comment out stylesheets which are not used in the site for lighter css
+@import "variables";
+@import "functions";
+@import "typography";
+@import "widget";
+@import "template";
+@import "forms";
+@import "lightbox";
+@import "native";
+@import "navigation";
+@import "page-sections";
+@import "tinymce";
+
+//noinspection CssInvalidFunction
+@if has-galleries()
+{
+	@import "galleries";
+}
+
+//noinspection CssInvalidFunction
+@if has-slideshow()
+{
+	@import "slideshow";
+}
+
+//noinspection CssInvalidFunction
+@if has-blog()
+{
+	@import "blog";
+}
+
+//noinspection CssInvalidFunction
+@if has-menus()
+{
+	@import "menus";
+}
+
+//noinspection CssInvalidFunction
+@if has-products()
+{
+	@import "products";
+}
+
+//noinspection CssInvalidFunction
+@if has-cart()
+{
+	@import "hover-cart";
+	@import "cart";
+}
+
+//noinspection CssInvalidFunction
+@if has-users()
+{
+	@import "user";
+}
+
+//noinspection CssInvalidFunction
+@if has-testimonials()
+{
+	@import "testimonials";
+}
+
+
+// putting modules and page types which are likely to want to alter-only-slightly blocks primarily //// styled in other modules eg blog, products at the end of the cascade lets this be done with //
+// minimum specificity override
+@import "styleguide";
+@import "mixins";
+@import "search";
+@import "front-page";
+@import "header";
+@import "footer";
+@import "disclosure-page";

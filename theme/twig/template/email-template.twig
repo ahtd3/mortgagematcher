@@ -1,0 +1,27 @@
+{% apply inlineCss("/theme/email-style.scss") %}
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title></title>
+			<meta name="viewport" content="width=device-width" />
+		</head>
+		<body>
+			<div class="body">
+				<div>
+					<a href="https://{{ constant("SITE_ROOT") }}/" target="_blank">{{ "/theme/images/logo.png"|tag("", config.getSiteName(), "", true) }}</a>
+				</div>
+				<div class="wrapper">
+					<div class="wrapped-block">
+						{% block content %}{% endblock %}
+					</div>
+					<div class="footer">
+						{% block footer_content %}
+							{% include "/pages/sections/address.twig" %}
+						{% endblock %}
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>
+{% endapply %}

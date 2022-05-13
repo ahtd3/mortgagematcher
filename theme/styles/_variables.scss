@@ -1,0 +1,65 @@
+// COLOURS
+$PRIMARY_HIGHLIGHT: #008eca;
+$SECONDARY_HIGHLIGHT: #5fc5f1;
+$DARK_COLOUR: #000;
+$LIGHT_COLOUR: #fff;
+$LIGHT_COLOUR-MEDI: #f1f4f5;
+$NEUTRAL_COLOUR: #626262;
+$DARK_NEUTRAL_COLOUR: #30312e;
+$LIGHT_NEUTRAL_COLOUR: #e4dfce;
+$WARNING_COLOUR: #fd1a00;
+$LINK_COLOR: #d4af37;
+
+// FONTS and font weights
+$BASE_FONT_SIZE: 16px; // used for converting px measurements from design into more responsive rem units which will respect the user's browser font settings @see the rem() function
+$CONTENT_FONT: Arial, sans-serif;
+$HEADING_FONT: 'Times New Roman', serif;
+
+$CONTENT_WIDTH: 1410px;
+$CONTAINER_PADDING: 10px;
+/// Maximum width of content as per design
+$CONTAINER_WIDTH: $CONTENT_WIDTH + ($CONTAINER_PADDING * 2);
+$LAPTOP_CONTAINER_WIDTH: 1200px + ($CONTAINER_PADDING * 2);
+
+$THIN: 100;
+$EXTRA_LIGHT: 200;
+$LIGHT: 300;
+$REGULAR: normal;
+$MEDIUM: 500;
+$SEMI_BOLD: 600;
+$BOLD: bold;
+$EXTRA_BOLD: 800;
+$BLACK: 900;
+
+// BREAKPOINTS used in conjunction with above() mixin (below and between are available if really needed)
+// these can be adjusted based on the needs of the design
+
+/// we don't really support displays smaller than this (ie they get the default styles) but sometimes it is useful to turn a rule on or off at this point
+$MOBILE_MIN: 320px;
+
+/// point at which design elements change for slightly larger screens, could be portrait or landscape.
+$TABLET_MIN: 640px;
+
+/// point at which we start assuming landscape display and expecting mouse/trackpad keyboard availability.
+/// 	this doesn't mean we should assume mouse/trachpad over touchscreen, ever
+$LAPTOP_MIN: 1024px;
+
+/// Point at which we are pretty sure the user is at a large laptop or desktop.
+$LAPTOP_MEDIUM: 1280px;
+
+// Pretty certain we're on a desktop, also wider than most  current designs
+$DESKTOP_MIN: 1600px;
+
+/// usually the full width of the design file, scaling of full-width elements often needs to change above this point.
+$DESKTOP_LARGE: 1920px;
+
+/// where slideshow can change from portrait to landscape version
+/// if the slideshow has different images for large and small screens this will usally be thw width of the smaller image
+$SLIDESHOW: $TABLET_MIN;
+
+/// where page is wide enough that full menu can be displayed insteadof the burger
+/// can vary significantly from design to design up to $CONTENT_WIDTH
+$NAV_BREAKPOINT: $LAPTOP_MEDIUM;
+
+// deprecated but still in use in files which haven't been updated
+$RESPONSIVE_BREAKPOINT: $TABLET_MIN;

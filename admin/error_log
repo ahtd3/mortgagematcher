@@ -1,0 +1,36 @@
+[10-May-2022 16:21:38 Pacific/Auckland] PHP Fatal error:  Uncaught Error: No type defined for get_in_touch in /home/mmadevco/public_html/admin/classes/Core/Attributes/Data.php:29
+Stack trace:
+#0 /home/mmadevco/public_html/admin/classes/Core/Attributes/PropertyAttribute.php(43): Core\Attributes\Data->getProperty()
+#1 /home/mmadevco/public_html/admin/classes/Core/Entity.php(184): Core\Attributes\PropertyAttribute::retrievePropertiesFromAttributes()
+#2 /home/mmadevco/public_html/admin/classes/Core/Entity.php(669): Core\Entity::getProperties()
+#3 /home/mmadevco/public_html/admin/classes/Core/Entity.php(694): Core\Entity::tableStringFor()
+#4 /home/mmadevco/public_html/admin/classes/Core/Entity.php(314): Core\Entity::tableString()
+#5 /home/mmadevco/public_html/admin/classes/Core/Entity.php(389): Core\Entity::processQueryFor()
+#6 /home/mmadevco/public_html/admin/classes/Core/Entity.php(505): Core\Entity::processQuery()
+#7 /home/mmadevco/public_html/admin/classes/Configuration/Configuration.php(150): Core\Entity::makeOne()
+#8 /home/mmadevco/public_html/admin/classes/Configuration/Configuration.php(386): Configuration\Configuration::acquire()
+#9 /home/mmadevco/public_html/admin/classes/Configuration/Configuration.php(448): Configuration\Configuration::getAdminNavLink()
+#10 /home/mmadevco/public_html/admin/classes/Configuration/Registry.php(91): Configuration\Configuration::getAdminNavItem()
+#11 /home/mmadevco/public_html/admin/classes/Admin/AdminController.php(69): Configuration\Registry::getAdminNavItems()
+#12 /home/mmadevco/public_html/admin/classes/Admin/AdminController.php(110): Admin\AdminController->getTemplateVariables()
+#13 /home/mmadevco/public_html/admin/index.php(58): Admin\AdminController->output()
+#14 {main}
+  thrown in /home/mmadevco/public_html/admin/classes/Core/Attributes/Data.php on line 29
+[10-May-2022 16:25:13 Pacific/Auckland] PHP Fatal error:  Uncaught Error: No type defined for get_matched_now in /home/mmadevco/public_html/admin/classes/Core/Attributes/Data.php:29
+Stack trace:
+#0 /home/mmadevco/public_html/admin/classes/Core/Attributes/PropertyAttribute.php(43): Core\Attributes\Data->getProperty()
+#1 /home/mmadevco/public_html/admin/classes/Core/Entity.php(184): Core\Attributes\PropertyAttribute::retrievePropertiesFromAttributes()
+#2 /home/mmadevco/public_html/admin/classes/Core/Entity.php(669): Core\Entity::getProperties()
+#3 /home/mmadevco/public_html/admin/classes/Core/Entity.php(694): Core\Entity::tableStringFor()
+#4 /home/mmadevco/public_html/admin/classes/Core/Entity.php(314): Core\Entity::tableString()
+#5 /home/mmadevco/public_html/admin/classes/Core/Entity.php(389): Core\Entity::processQueryFor()
+#6 /home/mmadevco/public_html/admin/classes/Core/Entity.php(505): Core\Entity::processQuery()
+#7 /home/mmadevco/public_html/admin/classes/Configuration/Configuration.php(150): Core\Entity::makeOne()
+#8 /home/mmadevco/public_html/admin/classes/Configuration/Configuration.php(386): Configuration\Configuration::acquire()
+#9 /home/mmadevco/public_html/admin/classes/Configuration/Configuration.php(448): Configuration\Configuration::getAdminNavLink()
+#10 /home/mmadevco/public_html/admin/classes/Configuration/Registry.php(91): Configuration\Configuration::getAdminNavItem()
+#11 /home/mmadevco/public_html/admin/classes/Admin/AdminController.php(69): Configuration\Registry::getAdminNavItems()
+#12 /home/mmadevco/public_html/admin/classes/Admin/AdminController.php(110): Admin\AdminController->getTemplateVariables()
+#13 /home/mmadevco/public_html/admin/index.php(58): Admin\AdminController->output()
+#14 {main}
+  thrown in /home/mmadevco/public_html/admin/classes/Core/Attributes/Data.php on line 29

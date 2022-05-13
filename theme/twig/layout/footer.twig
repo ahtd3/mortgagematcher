@@ -1,0 +1,33 @@
+<footer role="banner">
+    <section class="site-footer" style="background-image: url({{config.footer_section_bg.getLink()}});
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;">
+        <div class="container columns">
+            <h2>{{config.footer_section_title}}</h2>
+            <p>{{config.footer_section_description}}</p>
+            <a href="{{config.footer_section_link}}" class="btn secondary">{{config.footer_section_name_link}}</a>
+        </div>
+    </section>
+    <section class="sub-footer">
+        <div class="container">
+            <div class="sub-footer__top">
+                <div class="sub-footer__top--left">
+                    <h3>About {{config.getSiteName()}}</h3>
+                    <p>{{config.description_site}}</p>
+                </div>
+                <div class="sub-footer__top--mid">
+                    <a href="{{ homePath }}"><img src="{{config.logo_footer.getLink()}}" alt="logo"></a>
+                </div>
+                <div class="sub-footer__top--right">
+                    <h3>Quick Links</h3>
+                    {{config.quick_link | raw}}
+                </div>
+            </div>
+            <div class="sub-footer__bottom">
+                <div class="copyright">© {{ config.getSiteName() }}</div>
+                <div class="attribution"><a href="https://www.activatedesign.co.nz/" target="_blank" {% if not page.isHomepage %} rel="nofollow" {% endif %}>Web Design</a> by Activate</div>
+            </div>
+        </div>
+    </section>
+</footer>

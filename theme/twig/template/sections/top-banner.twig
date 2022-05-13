@@ -1,0 +1,46 @@
+{% set bannerAsBackground = false %}
+
+{% if banners|length > 0 %}
+	<section class="slideshow">
+		<div class="foxy slider">
+			{% for banner in banners %}
+				{# Ignore banners without images #}
+				{% if banner.getLargeImage() != null %}
+					{% set caption = banner.getCaption()|trim %}
+					{% if bannerAsBackground %}
+						<figure class="slide" >
+							{% if banner.getSmallImage() != null %}
+								<div class="small-screen background-image" style="background-image: url('{{ banner.getSmallImage().getLink() }}')"></div>
+							{% endif %}
+							<div class="big-screen background-image" style="background-image: url('{{ banner.getLargeImage().getLink() }}')"></div>
+							{% if caption != '' %}
+								<figcaption class="caption container">
+									<div class="caption-content">
+										{{ caption|raw }}
+									</div>
+								</figcaption>
+							{% endif %}
+						</figure>
+					{% else %}
+						<figure class="slide">
+							<picture>
+								<source srcset="{{ banner.getLargeImage().getLink() }}" media="(min-width: {{ constant('RESPONSIVE_IMAGE_WIDTH', banner) + 1 }}px)" />
+								{% if banner.getSmallImage() != null %}
+									<source srcset="{{ banner.getSmallImage().getLink() }}" />
+								{% endif %}
+								<img src="{{ banner.getLargeImage().getLink() }}" alt="" />
+							</picture>
+							{% if caption != '' %}
+								<figcaption class="caption container">
+									<div class="caption-content">
+										{{ caption|raw }}
+									</div>
+								</figcaption>
+							{% endif %}
+						</figure>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}

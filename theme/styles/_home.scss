@@ -1,0 +1,136 @@
+.slideshow {
+    .slide .caption {
+        bottom: 13%;
+        top: auto;
+
+        .caption-content {
+            max-width: 770px;
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+    
+            .tagline {
+                color: $color-white;
+                font-weight: 300;
+            }
+        }
+    }
+
+    picture {
+        @include lib-css(display, flex);
+    }
+}
+
+.home-page {
+    .content-wrapper {
+        padding-top: 45px;
+
+        .container.content {
+            max-width: 100%;
+        }
+    }
+}
+
+.advisers-container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    
+    > p {
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 26px
+    }
+
+    ul {
+        @include lib-css(display, flex);
+        gap: 8.5%;
+        justify-content: center;
+        align-items: flex-end;
+    }
+}
+
+.content-home {
+    background: #f1f4f5;
+    padding: 40px 0;
+
+    h3 {
+        font-size: 46px;
+        line-height: 30px;
+        color: $color-black;
+        margin-bottom: 40px;
+    }
+
+    ul {
+        padding-bottom: 30px;
+
+        li {
+            padding-left: 20px;
+        }
+    }
+
+    td:last-child {
+        padding-left: 40px;
+    }
+}
+
+.content-wrapper {
+    .container.content {
+        > h3 {
+            color: $color-black;
+            font-size: 46px;
+            line-height: 30px;
+        }
+
+        > p {
+            color: $color-black;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+        }
+
+        table {
+            ul {
+                li {
+                    font-size: 18px;
+                    line-height: 40px;
+                    color: $color-black;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
+.testimonials {
+    .testimonial {
+        @include lib-css(display, flex);
+        @include lib-css(box-shadow, none);
+        flex-wrap: wrap;
+        padding: 0;
+
+        img {
+            max-width: 100%;
+        }
+
+        .testimonial__left {
+            background: $color-black;
+            flex: 50%;
+            max-width: 50%;
+        }
+
+        .testimonial__right {
+            flex: 50%;
+            max-width: 50%;
+        }
+
+        .witness,
+        .testimony {
+            color: $color-white;
+        }
+    }
+}
