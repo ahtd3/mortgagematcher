@@ -99,7 +99,7 @@
 				{
 					$scss = CustomCompiler::getCompiler();
 					$scss->setImportPaths(DOC_ROOT . "/theme/");
-					$css = $scss->compileString(file_get_contents(DOC_ROOT . $cssPath));
+					$css = $scss->compileString(file_get_contents(DOC_ROOT . $cssPath))->getCss();
 				}
 				
 				$inlineStyler = new CssToInlineStyles();

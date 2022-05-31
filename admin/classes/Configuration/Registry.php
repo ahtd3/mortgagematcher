@@ -6,7 +6,8 @@
 	use Forms\Form;
 	use Galleries\Gallery;
 	use Menus\Menu;
-	use Orders\LineItemGenerator;
+    use MortgageMatcher\Question;
+    use Orders\LineItemGenerator;
 	use Orders\Order;
 	use Orders\ShippingRegion;
 	use Pages\Page;
@@ -50,6 +51,7 @@
 		const WEIGHT_BASED_SHIPPING = false;
 		const TESTIMONIALS = true;
 		const USERS = false;
+        const MORTGAGE_MATCHER = true;
 
 		const SEARCHABLE_CLASSES = [Page::class, ProductCategory::class, Product::class, BlogArticle::class];
 
@@ -87,6 +89,7 @@
 				Form::getAdminNavItem(),
 				Gallery::getAdminNavItem(),
 				Testimonial::getAdminNavItem(),
+                Question::getAdminNavItem(),
 				Administrator::getAdminNavItem(),
 				Configuration::getAdminNavItem(),
 				Redirect::getAdminNavItem(),

@@ -5,7 +5,8 @@
 	use Configuration\Registry;
 	use Menus\MenuController;
 	use Menus\MenusPage;
-	use Pages\Contact\ContactPage;
+    use MortgageMatcher\MortgageMatcherController;
+    use Pages\Contact\ContactPage;
 	use Pages\Contact\ContactPageController;
 	use Pages\Faqs\FaqPage;
 	use Pages\FrontPage\FrontPage;
@@ -33,6 +34,7 @@
 		const BILL_PAYMENTS = "Payments";
 		const PRODUCTS = "Products";
 		const TESTIMONIALS = "Testimonials";
+        const MORTGAGE_MATCHER = 'Mortgage Matcher';
 		
 		/** @var class-string<Page> */
 		public string $class = Page::class;
@@ -84,9 +86,11 @@
 				$types[static::TESTIMONIALS] = new self(Page::class, "pages/testimonials-page.twig");
 			}
 
+            $types[static::MORTGAGE_MATCHER] = new self(Page::class, 'mortgage-matcher/widget-page.twig', MortgageMatcherController::class);
+
 			$types['contact_page'] = new self(Page::class, "pages/contact_page.twig");
 			$types['Home page'] = new self(Page::class, "pages/home_page.twig");
-			$types['Get Matched page'] = new self(Page::class, "pages/get_matched.twig");
+
 			$types['About Us page'] = new self(Page::class, "pages/about-us.twig");
 			return $types;
 		}

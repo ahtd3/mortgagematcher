@@ -75,7 +75,7 @@
 		const DO_BANNER = true;
 		const BANNER_CLASS = PageBanner::class;
 
-		const DO_IMAGE = false;
+		const DO_IMAGE = true;
 		const IMAGE_LOCATION = DOC_ROOT . "/resources/images/page/";
 		const IMAGE_WIDTH = 980;
 		const IMAGE_HEIGHT = 0;

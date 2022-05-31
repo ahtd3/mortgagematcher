@@ -12,7 +12,7 @@ main {
             font-weight: $SEMI_BOLD;
         }
         color: $DARK_COLOUR;
-        margin-bottom: 16px;
+        margin-bottom: 27px;
     } 
 
     h4 {
@@ -35,15 +35,41 @@ main {
             text-decoration: underline;
         }
     }
+
+    ul {
+        list-style-type: none;
+        margin-left: 15px;
+        margin-bottom: 28px;
+        li {
+            color: $DARK_COLOUR;
+            line-height: 28px;
+            position: relative;
+            font-size: 18px;
+            font-weight: 300;
+        }
+    
+        li:before {
+            content: ".";
+            display: inline-block;
+            top: -14px;
+            left: -17px;
+            position: absolute;
+            font-size: 46px;
+        }
+    }
+
+    h3 {
+        strong {
+            font-weight: $SEMI_BOLD;
+        }
+        color: $DARK_COLOUR;
+        margin-bottom: 16px;
+    } 
 }
 
-h3 {
-    strong {
-        font-weight: $SEMI_BOLD;
-    }
-    color: $DARK_COLOUR;
-    margin-bottom: 16px;
-} 
+::marker {
+    font-size: revert;
+}
 
 .information {
     margin-bottom: 33px;
@@ -112,6 +138,8 @@ figure.slide.foxy-current {
         margin-bottom: 28px;
     }
 }
+
+
 
 @media all and (max-width: 1024px) {
     .extra-content {

@@ -176,7 +176,22 @@
 				event.stopPropagation();
 			});
 		}
+
+		if ($('html').hasClass('Mortgage-Matcher'))
+		{
+			mortgageMatcherSetUp();
+		}
 	});
+
+	function mortgageMatcherSetUp()
+	{
+
+
+		console.log('Mortgage Matcher magic here');
+
+
+
+	}
 
 		/**
 	 * Sets up a Products module or similar gallery with the actions

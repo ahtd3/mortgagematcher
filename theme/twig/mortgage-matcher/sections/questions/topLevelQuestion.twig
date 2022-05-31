@@ -1,0 +1,14 @@
+{% include 'forms/radio-buttons.twig' with
+{
+    'label': question.title,
+    'htmlLabel': true,
+    'values': {
+        'A property to live in': 'A property to live in',
+        'An investment property': 'An investment property',
+        'A second home': 'A second home',
+        'A mortgage review': 'A mortgage review'
+    },
+    'name': question.identifier,
+    'wrapperClasses': question.identifier ~ ' active ' ~ (question.isRequired() ? 'required' : ''),
+    'required': question.isRequired()
+} only %}

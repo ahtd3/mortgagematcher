@@ -1,0 +1,29 @@
+{#
+
+    @TODO:
+        1. GET all questions from database, BUT hide all BUT the topLevelQuestion
+        2. set them up as required in wizard (by using twig templates by identifier) + STYLES
+        IMPORTANT: HOW DO WE DO THIS?
+        3. depending on topLevelQuestion selection and "step" (= what question is currently visible)
+            -> show AND hide questions, disable / enable next/prev/submit buttons
+            -> javascript!
+        4. for required questions, ONLY ENABLE next button if something is selected/filled in!!
+        5. HIDE submit button until very end
+
+#}
+
+<form method="post" action="/get-matched/action/submit-form/">
+    <section class="questions">
+        {% for question in questions %}
+            {% include 'mortgage-matcher/sections/questions/' ~ question.identifier ~ '.twig' %}
+        {% endfor %}
+    </section>
+
+    {% include('forms/captcha.twig') %}
+
+    <section class="buttons">
+        <button class="button previous active" disabled data-prev-identifier="">Previous</button>
+        <button class="button next active" disabled data-next-identifier="">Next</button>
+        <button class="button submit" type="submit" disabled>Submit</button>
+    </section>
+</form>
