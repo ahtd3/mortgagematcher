@@ -1,6 +1,7 @@
 // getting fonts here means they are picked up by the editor in the admin panel
 // they are also set in the <head> of the site template to reduce content flash
 @import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap';
 
 // comment out stylesheets which are not used in the site for lighter css
 @import "variables";
@@ -14,6 +15,7 @@
 @import "navigation";
 @import "page-sections";
 @import "tinymce";
+@import "mortgage-matcher";
 
 //noinspection CssInvalidFunction
 @if has-galleries()
@@ -74,3 +76,7 @@
 @import "header";
 @import "footer";
 @import "disclosure-page";
+@import "about-page";
+@import "get-matched";
+@import "contact-page";
+@import "home";

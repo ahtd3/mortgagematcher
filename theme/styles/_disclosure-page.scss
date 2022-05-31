@@ -1,15 +1,18 @@
 main {
     background-color: $LIGHT_COLOUR-MEDI;
+    padding-bottom: 75px;
 }
 
-.extra-content {
+.content-master {
     margin-bottom: 61px;
     margin-top: 0px;
 
     h3 {
+        strong {
+            font-weight: $SEMI_BOLD;
+        }
         color: $DARK_COLOUR;
         margin-bottom: 16px;
-        font-weight: $SEMI_BOLD;
     } 
 
     h4 {
@@ -18,22 +21,58 @@ main {
     }
     
     p {
-        margin-bottom: 24px;
         line-height: 28px;
         font-size: 18px;
         font-weight: $LIGHT;
-        word-spacing: -4px;
-
         a {
             color: $LINK_COLOR;
             line-height: 28px;
             font-size: 18px;
             font-weight: $LIGHT;
         }
+
+        .content-master p a:hover {
+            text-decoration: underline;
+        }
     }
 }
 
-.extra-content:last-child {
+h3 {
+    strong {
+        font-weight: $SEMI_BOLD;
+    }
+    color: $DARK_COLOUR;
+    margin-bottom: 16px;
+} 
+
+.information {
+    margin-bottom: 33px;
+    margin-top: -7px;
+    font-weight: 600;
+}
+
+.nature {
+    margin-bottom: 36px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.fees {
+    margin-bottom: 58px;
+}
+
+.conflicts {
+    p {
+        margin-bottom: 28px;
+    }
+}
+
+.resspon {
+    margin-top: 49px;
+}
+.content-master:last-child {
     p {
         font-weight: $LIGHT;
     }
@@ -46,41 +85,45 @@ figure.slide.foxy-current {
 .content-wrapper {
     h1 {
         color: $DARK_COLOUR;
-        padding-top: 87px;
-        padding-bottom: 28px;
-        word-spacing: -4px;
+        padding-top: 96px;
+        padding-bottom: 27px;
     }
     p {
-        margin-bottom: 24px;
-        word-spacing: -4px;
+        margin-bottom: 27px;
+        font-size: 18px;
+        font-weight: 300;
     }
 }
 
 .conflicts {
     margin-top: -22px;
+    margin-bottom: 45px;
     h3 {
         margin-bottom: 23px;
+    }
+}
+
+.resspon {
+    h3 {
+        margin-bottom: 27px;
+    }
+
+    p {
+        margin-bottom: 28px;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .extra-content {
+        padding: 0 20px;
     }
 }
 
 @media all and (max-width: 767.98px) {
     .extra-content  {
         padding: 0 24px;
-        p {
-            line-height: 25px;
-            font-size: 17px;
-        }
-
-        h4 {
-            line-height: 25px;
-            font-size: 17px;
-        }
     }
 
-    h3 {
-        font-size: 24px;
-        line-height: 28px;
-    }
     .content-wrapper {
         padding: 0 24px;
         .content {
@@ -89,13 +132,36 @@ figure.slide.foxy-current {
 
         h1 {
             padding-top: 72px;
-            line-height: 21px;
-            font-size: 32px;
+        }
+    }
+}
+
+@media all and (max-width: 375px) {
+    .content-master  {
+        padding: 0 16px;
+        P {
+            font-size: 15PX;
+            a {
+                font-size: 15px;
+            }
+        }
+    }
+
+    main {
+        padding-bottom: 20px;
+    }
+
+    .content-wrapper {
+        padding: 0 24px;
+        .content {
+            padding: 0;
+            p {
+                font-size: 15px;
+            }
         }
 
-        p {
-            line-height: 25px;
-            font-size: 17px;
+        h1 {
+            padding-top: 72px;
         }
     }
 }

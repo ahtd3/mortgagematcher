@@ -1,0 +1,109 @@
+.get-matched-page {
+    main {
+        padding-bottom: 75px;
+    }
+
+    .content-wrapper {
+        padding-top: 29px;
+        p {
+            margin-bottom: 26px;
+            line-height: 28px;
+            font-size: 18px;
+        }
+
+        h1 {
+            padding-bottom: 30px;
+            padding-top: 89px;
+        }
+    }
+
+    .container {
+        padding-right: 4px;
+        table {
+            border: 0;
+            margin-left: -4px;
+
+            td:first-child {
+                border: 0;
+                width: 51.7%;
+                img {
+                    display: block;
+                }
+            }
+
+            td:last-child {
+                background-color: #fff;
+                border: 0;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1700px) {
+    .get-matched-page {
+        .container {
+            padding: 0 20px;
+            table {
+                margin-left: 0;
+                td:first-child {
+                    border: 0;
+                    width: unset;
+    
+                    img {
+                        height: auto;
+                        max-width: 96%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .get-matched-page {
+        main {
+            padding-bottom: 25px;
+        }
+
+        .content-wrapper{
+            padding: 0;
+            h1 {
+                white-space: unset;
+                width: unset;
+            }
+        }
+        
+        .container {
+            padding-right: 20px;
+            table {
+                display: flex;
+                tr {
+                    display: flex;
+                    flex-direction: column;
+                    td {
+                        display: flex;
+                    }
+                }
+
+                td:first-child {
+                    margin-bottom: 24px;
+
+                    img {
+                        height: auto;
+                        max-width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .get-matched-page {
+        .content-wrapper h1 {
+           font-size: 40px;
+        }
+    }
+}

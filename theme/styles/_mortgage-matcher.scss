@@ -1,0 +1,188 @@
+.Mortgage-Matcher
+{
+  font-family: 'Inter', sans-serif;
+
+  .columns
+  {
+    margin-top: rem(40px);
+  }
+
+  .column.image
+  {
+    img
+    {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .column.form-widget
+  {
+    border-radius: 10px;
+    background: $LIGHT_COLOUR;
+    box-shadow: 0 0 20px 1px rgba($DARK_COLOUR, 0.08);
+    padding: rem(35px);
+
+    @include below($LAPTOP_MIN)
+    {
+      margin-top: rem(50px);
+    }
+
+    > form
+    {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+
+      .questions
+      {
+        .field-wrapper
+        {
+          display: none;
+
+          &.group
+          {
+            background: none;
+          }
+
+          &.active
+          {
+            display: block;
+          }
+
+          &.required legend
+          {
+            font-size: 32px;
+            font-weight: $SEMI_BOLD;
+            margin-bottom: rem(20px);
+
+            &:after
+            {
+              content: '*';
+              color: $PRIMARY_HIGHLIGHT;
+            }
+          }
+
+          label.selectable
+          {
+            border-radius: 10px;
+            box-shadow: 0 0 20px 1px rgba($DARK_COLOUR, 0.08);
+            padding: rem(20px);
+            font-size: 20px;
+            margin: rem(10px) 0;
+            display: flex;
+            align-items: center;
+          }
+
+          input[type=radio]
+          {
+            border: none;
+            margin-right: rem(15px);
+            height: 12px;
+            width: 12px;
+
+            &:before
+            {
+              content: none;
+            }
+
+            &:after
+            {
+              left: -4px;
+              top: -4px;
+            }
+          }
+        }
+      }
+
+      .buttons
+      {
+        display: flex;
+        justify-content: space-between;
+
+        .button
+        {
+          display: none;
+          background: $PRIMARY_HIGHLIGHT;
+          color: $LIGHT_COLOUR;
+          font-family: inherit;
+          font-weight: $MEDIUM;
+          font-size: 16px;
+          flex: 1;
+          position: relative;
+          padding: 0;
+
+          @include hover
+          {
+            opacity: 0.5;
+          }
+
+          &:after
+          {
+            content: url('/theme/images/icons/mortgage-matcher/arrow-enabled.png');
+            position: absolute;
+          }
+
+          &:disabled
+          {
+            background: #F0F0F0;
+            color: #9E9E9E;
+
+            &:after
+            {
+              content: url('/theme/images/icons/mortgage-matcher/arrow-disabled.png');
+            }
+          }
+
+          &.active
+          {
+            display: block;
+          }
+
+          &.next,
+          &.submit
+          {
+            border-radius: 0 50px 50px 0;
+            margin-left: 1px;
+            text-align: right;
+            padding-right: rem(65px);
+            width: 50%;
+
+            &:after
+            {
+              right: rem(25px);
+            }
+
+            &:disabled:after
+            {
+              transform: rotate(180deg);
+            }
+          }
+
+          &.previous
+          {
+            margin-right: 1px;
+            border-radius: 50px 0 0 50px;
+            text-align: left;
+            width: 50%;
+            padding-left: rem(65px);
+
+            &:after
+            {
+              left: rem(25px);
+            }
+
+            &:not([disabled]):after
+            {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

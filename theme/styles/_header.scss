@@ -65,7 +65,7 @@ body {
 
         .main-navigation {
             @include lib-css(display, flex);
-            background-color: $theme__color__secondary;
+            background-color: $LINK_COLOR;
             justify-content: center;
             z-index: -1;
             visibility: hidden;
@@ -151,7 +151,7 @@ body {
             transform: translate(0, -50%);
 
             .btn.primary {
-                font-size: 16px;
+                font-size: $BASE_FONT_SIZE;
                 font-weight: 500;
                 line-height: 21px;
                 min-width: 159px;
@@ -163,17 +163,20 @@ body {
 }
 
 .site-header {
-    > .container {
-        padding: 16px 0 20px;
-
-        > a {
-            min-width: 329px;
-            
-            img {
-                width: 100%;
-                margin-left: -4px;
-            }
+    > a {
+        min-width: 329px;
+        
+        img {
+            margin-left: -4px;
+            max-height: 77px;
+            width: auto;
         }
+    }
+}
+
+body {
+    .site-header > .container {
+        padding: 16px 0 20px;
     }
 }
 
@@ -184,7 +187,7 @@ body {
     }
 
     .site-header .main-navigation-wrapper .open-nav.open .bar {
-        background: $color-white;
+        background: $LIGHT_COLOUR;
     }
 
     .site-header-sticky {
@@ -230,7 +233,7 @@ body {
     }
 }
 
-@media (max-width: 1279.98px) {
+@media (max-width: 1278px) {
     body {
         > header[role=banner] {
             background: transparent;
@@ -238,6 +241,10 @@ body {
     
         > header .logo {
             margin: auto;
+        }
+
+        &.open {
+            overflow: hidden
         }
     }
 
@@ -259,7 +266,7 @@ body {
             }
 
             .main-navigation {
-                background: $color-black;
+                background: $DARK_COLOUR;
                 display: none;
                 position: relative;
 
@@ -341,10 +348,6 @@ body {
                 }
             }
         }
-    }
-
-    body.open {
-        overflow: hidden
     }
 }
 

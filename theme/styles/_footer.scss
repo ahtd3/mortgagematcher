@@ -1,5 +1,5 @@
 .site-footer {
-    background: $theme__color__secondary;
+    background: $LINK_COLOR;
     padding: 143px 0 135px;
 
     .container.columns {
@@ -10,7 +10,7 @@
 
         h2,
         p {
-            color: $color-white;
+            color: $LIGHT_COLOUR;
         }
 
         h2 {
@@ -28,6 +28,11 @@
         a {
             max-width: 229px;
             margin: auto;
+
+            &:active,
+            &:focus {
+                text-decoration-line: none;
+            }
         }
         
         > * {
@@ -39,12 +44,12 @@
 .sub-footer {
     background: #111211;
     margin: 0 auto;
-    color: $color-white;
+    color: $LIGHT_COLOUR;
 
     h3 {
         font-size: 24px;
         line-height: 28px;
-        color: $color-white;
+        color: $LIGHT_COLOUR;
     }
 
     .container {
@@ -102,6 +107,13 @@
             ul li { 
                 display: flex;
                 justify-content: flex-end;
+
+                a {
+                    &:active,
+                    &:focus {
+                        text-decoration-line: none;
+                    }
+                }
             }
         }
     }
@@ -116,9 +128,14 @@
         a {
             font-size: 14px;
             line-height: 40px;
-            color: $color-white;
+            color: $LIGHT_COLOUR;
             font-weight: 300;
             font-family: "Montserrat";
+
+            &:active,
+            &:focus {
+                text-decoration-line: none;
+            }
         }
     }
 

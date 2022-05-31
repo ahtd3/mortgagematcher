@@ -108,10 +108,10 @@ $theme__color__primary: #000;
 $theme__color__secondary: #d4af37;
 
 // button
-$button-primary__color: $color-white;
-$button-primary__background: $theme__color__secondary;
-$button-secondary__color: $color-black;
-$button-secondary__background: $color-white;
+$button-primary__color: $LIGHT_COLOUR;
+$button-primary__background: $LINK_COLOR;
+$button-secondary__color: $DARK_COLOUR;
+$button-secondary__background: $LIGHT_COLOUR;
 
 //
 //  Typography
@@ -182,7 +182,6 @@ h6 {
 
 
 ul {
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -289,7 +288,7 @@ input[type="radio"]:checked::before {
 }
 
 // button-style
-.btn {
+@mixin btn {
     border-radius: 27px;
     border: 0;
     color: $color-white;
@@ -302,12 +301,15 @@ input[type="radio"]:checked::before {
     padding: 17px 20px;
     text-transform: capitalize;
     width: max-content;
-}
 
-.btn:hover,
-.btn:active,
-.btn:focus {
-    text-decoration-line: none;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration-line: none;
+    }
+}
+.btn {
+    @include btn;
 }
 
 .primary {

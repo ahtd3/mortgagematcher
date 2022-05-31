@@ -1,14 +1,14 @@
 <div class="image-block-wrapper {{ section.useSpecialBackground ? "special" : "" }} {{section.code}}">
 	<div class="container image-block">
+		<div class="block-content">
+			{{ section.content|expandHtml }}
+		</div>
 		{% if section.image != null %}
-			{{ section.image.tag("big-image", section.imageDescription)|raw }}
+			{{ section.image.tag("big-image", section.imageDescription)|expandHtml }}
 		{% else %}
 			<div class="big-image">
-				{{ section.getMedia().getEmbedCode()|raw }}
+				{{ section.getMedia().getEmbedCode()|expandHtml }}
 			</div>
 		{% endif %}
-		<div class="block-content">
-			{{ section.content|raw }}
-		</div>
 	</div>
 </div>

@@ -11,3 +11,9 @@
 		{{ page.getPageContent()|expandHtml }}
 	{% endblock %}
 {% endblock %}
+
+{% block content_wrapper %}
+<div class="content-master">
+{{parent()}}
+</div>
+{% endblock %}

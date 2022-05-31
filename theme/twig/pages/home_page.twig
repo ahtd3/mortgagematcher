@@ -6,13 +6,20 @@
 	{% endblock %}
 	{% block content_title %}
 	{% endblock %}
-	{% block page_content %}
-		{% include 'components/advisers.twig' %}
+	{% include 'components/advisers.twig' %}
+	<div class="container">
 		{{ page.getPageContent()|expandHtml }}
-		<div class="container">
-			{% include 'components/testimonial.twig' %}
-		</div>
-	{% endblock %}
+	</div>
+	{% for section in page.getVisiblePageSections() %}
+		{% include section.getTemplateLocation() %}
+	{% endfor %}
 {% endblock %}
+{% block page_sections %}{% endblock %}
 
+{% block content_wrapper %}
+{{parent()}}
+<div class="container">
+	{% include 'components/testimonial.twig' %}
+</div>
+{% endblock %}
 {% block class_body %}home-page{% endblock %}

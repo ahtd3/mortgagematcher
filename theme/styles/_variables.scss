@@ -1,6 +1,6 @@
 // COLOURS
-$PRIMARY_HIGHLIGHT: #008eca;
-$SECONDARY_HIGHLIGHT: #5fc5f1;
+$PRIMARY_HIGHLIGHT: #d4af37;
+$SECONDARY_HIGHLIGHT: rgba(212, 175, 55, 0.75);
 $DARK_COLOUR: #000;
 $LIGHT_COLOUR: #fff;
 $LIGHT_COLOUR-MEDI: #f1f4f5;
@@ -9,6 +9,7 @@ $DARK_NEUTRAL_COLOUR: #30312e;
 $LIGHT_NEUTRAL_COLOUR: #e4dfce;
 $WARNING_COLOUR: #fd1a00;
 $LINK_COLOR: #d4af37;
+$BORDER-COLOR: #C8C8C8;
 
 // FONTS and font weights
 $BASE_FONT_SIZE: 16px; // used for converting px measurements from design into more responsive rem units which will respect the user's browser font settings @see the rem() function
